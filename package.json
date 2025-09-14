@@ -26,9 +26,9 @@
     "typescript": "^5.9.2",
     "vite": "^5.4.20"
   },
-  "description": "",
+  "description": "Basit bir bitki takip uygulaması - React + Vite demo",
   "main": "postcss.config.js",
-  "keywords": [],
-  "author": "",
+  "keywords": ["plant", "tracker", "react", "vite"],
+  "author": "Senin İsmin",
   "license": "ISC"
 }

@@ -1,56 +1,237 @@
-*{box-sizing:border-box}
-:root{
-  --bg:#141619;
-  --panel:#22262b;
-  --line:#333941;
-  --text:#e8eef3;
-  --muted:#a7afb7;
-  --accent:#46c27e;
-  --danger:#ef6464;
-}
-html,body,#root{height:100%}
-body{margin:0;background:linear-gradient(180deg,#121417,#0e1012);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif}
-.app{min-height:100%;display:flex}
-.container{width:100%;max-width:880px;margin:0 auto;padding:16px;display:flex;flex-direction:column;gap:16px}
-@media (min-width:480px){
-  .app>.container:not(:has(.toolbar)){max-width:420px}
+* {
+  box-sizing: border-box;
 }
 
-.toolbar{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
-.title{font-weight:700}
-.spacer{flex:1}
+:root {
+  --bg: #141619;
+  --panel: #22262b;
+  --line: #333941;
+  --text: #e8eef3;
+  --muted: #a7afb7;
+  --accent: #46c27e;
+  --danger: #ef6464;
+}
 
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
-.stack{display:flex;flex-direction:column;gap:10px}
-.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.center{display:flex;align-items:center;justify-content:center}
+html, body, #root {
+  height: 100%;
+}
 
-.input{width:100%;background:#1b1e22;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px;outline:none}
-.input:focus{border-color:var(--accent)}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #121417, #0e1012);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, sans-serif;
+}
 
-.btn{background:#24282d;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer}
-.btn.primary{background:var(--accent);color:#0b1210;border-color:transparent}
-.btn.danger{background:#3a2323;border-color:#5a2c2c;color:#ffbebe}
-.btn.ghost{background:transparent}
-.btn:disabled{opacity:.6;pointer-events:none}
+.app {
+  min-height: 100%;
+  display: flex;
+}
 
-.card .stack .btn{width:100%}
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-.tabs{display:flex;gap:8px}
-.tab{background:#24282d;border:1px solid var(--line);color:var(--text);border-radius:999px;padding:6px 12px}
+@media (min-width: 480px) {
+  .app > .container:not(:has(.toolbar)) {
+    max-width: 420px;
+  }
+}
 
-.subtitle{font-weight:600;color:var(--muted)}
+/* Üst bar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
 
-.grid2{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:768px){.grid2{grid-template-columns:1fr 1fr}}
+.title {
+  font-weight: 700;
+}
 
-.list{display:flex;flex-direction:column;gap:8px}
-.item{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#1f2327;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.item-title{font-weight:600}
-.item-sub{color:var(--muted);font-size:12px}
+.spacer {
+  flex: 1;
+}
 
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px}
-.modal-body{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;align-items:center}
+/* Kartlar */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+}
 
-.muted{color:var(--muted);font-size:13px;text-align:center}
-img{display:block;max-width:100%}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form elemanları */
+.input {
+  width: 100%;
+  background: #1b1e22;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+/* Butonlar */
+.btn {
+  background: #24282d;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #0b1210;
+  border-color: transparent;
+}
+
+.btn.danger {
+  background: #3a2323;
+  border-color: #5a2c2c;
+  color: #ffbebe;
+}
+
+.btn.ghost {
+  background: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Kart içindeki butonları genişlet */
+.card .stack .btn {
+  width: 100%;
+}
+
+/* Sekmeler */
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  background: #24282d;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+/* Yazılar */
+.subtitle {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Grid düzeni */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .grid2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Liste */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #1f2327;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.item-title {
+  font-weight: 600;
+}
+
+.item-sub {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-body {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Pasif yazılar */
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Görseller */
+img {
+  display: block;
+  max-width: 100%;
+}

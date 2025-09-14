@@ -1,1 +1,1 @@
-declare module 'jsqr';
+declare module "jsqr";
